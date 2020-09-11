@@ -1,0 +1,57 @@
+scalar Upload
+
+type File {
+  filename: String!
+  mimetype: String!
+  encoding: String!
+}
+type TranslationAssignment {
+  id: Int
+  userId: Int
+  documentType: String
+  sourceLanguage: String
+  targetLanguage: String
+  expertiseLevel: String
+  wordCount: Int
+  formattingRequired: String
+  qualifiedTranslatorRequired: String
+  postCertificate: String
+  additionalQARequired: String
+  translationAssignmentFiles: [TranslationAssignmentFile]
+  #non-reuired
+  additionalNote: String
+}
+
+input TranslationAssignmentInput {
+  userId: Int
+  documentType: String
+  sourceLanguage: String
+  targetLanguage: String
+  expertiseLevel: String
+  wordCount: Int
+  formattingRequired: String
+  qualifiedTranslatorRequired: String
+  postCertificate: String
+  additionalQARequired: String
+  initialFiles: [Upload]
+  initialFilesNames: [String]
+  #non-required
+  additionalNote: String
+}
+
+input TranslationAssignmentWhere {
+  id: Int
+}
+
+input TranslationAssignmentsWhere {
+  userId: Int
+}
+
+type Query {
+  getTranslationAssignment(where: TranslationAssignmentWhere, limit: Int, offset: Int): TranslationAssignment
+  getTranslationAssignments(where: TranslationAssignmentsWhere, limit: Int, offset: Int): [TranslationAssignment]
+}
+
+type Mutation {
+  createTranslationAssignment(data: TranslationAssignmentInput) : Boolean
+}

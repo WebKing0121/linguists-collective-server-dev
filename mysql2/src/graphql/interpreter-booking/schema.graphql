@@ -1,0 +1,67 @@
+scalar DateTime
+
+type InterpreterBooking {
+  id: Int
+  userId: Int
+  interpretingService: String,
+  startDate: DateTime,
+  startTime: String,
+  endDate: DateTime,
+  endTime: String,
+  sourceLanguage: String,
+  targetLanguage: String,
+  requiredInterpretingTypes: String,
+  jobDescription: String,
+  expertiseLevel: String,
+  securityClearanceLevelRequired: String,
+  # non-required
+  remotePlatform: String,
+  remotePhoneNumber: String,
+  venueAddress: String,
+  venuePostcode: String,
+  preferredInterpreterId: Int,
+  preferredGender: String,
+  carParkingAvailable: String,
+  additionalInformation: String,
+}
+
+input InterpreterBookingInput {
+  userId: Int
+  interpretingService: String,
+  startDate: DateTime,
+  startTime: String,
+  endDate: DateTime,
+  endTime: String,
+  sourceLanguage: String,
+  targetLanguage: String,
+  requiredInterpretingTypes: String,
+  jobDescription: String,
+  expertiseLevel: String,
+  securityClearanceLevelRequired: String,
+  # non-required
+  remotePlatform: String,
+  remotePhoneNumber: String,
+  venueAddress: String,
+  venuePostcode: String,
+  preferredInterpreterId: Int,
+  preferredGender: String,
+  carParkingAvailable: String,
+  additionalInformation: String,
+}
+
+input InterpreterBookingWhere {
+  id: Int
+}
+
+input InterpreterBookingsWhere {
+  userId: Int
+}
+
+type Query {
+  getInterpreterBooking(where: InterpreterBookingWhere, limit: Int, offset: Int): InterpreterBooking
+  getInterpreterBookings(where: InterpreterBookingsWhere, limit: Int, offset: Int): [InterpreterBooking]
+}
+
+type Mutation {
+  createInterpreterBooking(data: InterpreterBookingInput): Boolean
+}

@@ -1,0 +1,13 @@
+type Linguist {
+  id: Int
+  user: User
+  otherName: String
+}
+
+input LinguistWhere {
+  id: Int
+}
+
+type Query {
+   getLinguist(where: LinguistWhere, limit: Int, offset: Int): Linguist
+}

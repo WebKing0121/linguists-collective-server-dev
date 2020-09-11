@@ -1,0 +1,35 @@
+enum TranslationAssignmentFileType {
+  INITIAL
+  DELIVERY
+}
+type TranslationAssignmentFile {
+  id: Int
+  translationAssignment: TranslationAssignment
+  documentType: TranslationAssignmentFileType
+  fileName: String
+  #non-required
+  deliveryId: Int
+}
+
+input TranslationAssignmentFileInput {
+  translationAssignmentId: Int
+  documentType: TranslationAssignmentFileType
+  fileName: String
+  #non-required
+  deliveryId: Int
+}
+
+input TranslationAssignmentFileWhere {
+  id: Int
+}
+
+input TranslationAssignmentFilesWhere {
+  translationAssignmentId: Int
+  documentType: TranslationAssignmentFileType
+  deliveryId: Int
+}
+
+type Query {
+  getTranslationAssignmentFile(where: TranslationAssignmentFileWhere, limit: Int, offset: Int): TranslationAssignmentFile
+  getTranslationAssignmentFiles(where: TranslationAssignmentFilesWhere, limit: Int, offset: Int): [TranslationAssignmentFile]
+}

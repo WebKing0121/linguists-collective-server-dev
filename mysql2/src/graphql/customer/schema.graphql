@@ -1,0 +1,45 @@
+type Customer {
+  id: Int
+  user: User
+  phone: String
+  address: String
+  postcode: String
+  businessName: String
+  #non-required
+  position: String
+  businessContactAddress: String
+  businessContactPostcode: String
+  registrationNumber: String
+  businessWebsite: String
+  businessEmail: String
+  additionalInfo: String
+}
+
+input CustomerInput {
+  customerId: Int
+  userId: Int
+  phone: String
+  address: String
+  postcode: String
+  businessName: String
+  # non-required
+  position: String
+  businessContactAddress: String
+  businessContactPostcode: String
+  registrationNumber: String
+  businessWebsite: String
+  businessEmail: String
+  additionalInfo: String
+}
+
+input CustomerWhere {
+  id: Int
+}
+
+type Query {
+   getCustomer(where: CustomerWhere, limit: Int, offset: Int): Customer
+}
+
+type Mutation {
+   updateCustomer(data: CustomerInput): Boolean
+}

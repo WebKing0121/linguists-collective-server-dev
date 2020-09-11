@@ -1,0 +1,45 @@
+type QuoteRequest {
+  id: Int
+  userId: Int
+  requestPurpose: String
+  requestDetails: String
+  expertiseLevel: String
+  sourceLanguage: String
+  targetLanguage: String
+  turnaroundTime: String
+  #non-required
+  otherPurpose: String
+  budgetDetails: String
+  preferredGender: String
+}
+
+input QuoteRequestInput {
+  userId: Int
+  requestPurpose: String
+  requestDetails: String
+  expertiseLevel: String
+  sourceLanguage: String
+  targetLanguage: String
+  turnaroundTime: String
+  #non-required
+  otherPurpose: String
+  budgetDetails: String
+  preferredGender: String
+}
+
+input QuoteRequestWhere {
+  id: Int
+}
+
+input QuoteRequestsWhere {
+  userId: Int
+}
+
+type Query {
+  getQuoteRequest(where: QuoteRequestWhere, limit: Int, offset: Int): QuoteRequest
+  getQuoteRequests(where: QuoteRequestsWhere, limit: Int, offset: Int): [QuoteRequest]
+}
+
+type Mutation {
+  createQuoteRequest(data: QuoteRequestInput) : Boolean
+}

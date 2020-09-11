@@ -1,0 +1,45 @@
+type User {
+   id: Int
+   email: String
+   firstName: String
+   lastName: String
+   title: String
+   profilePhotoUrl: String
+   userType: String
+   customer: Customer
+   linguist: Linguist
+   admin: Admin
+   jwt: String @isAuthUser
+}
+
+input UserInput {
+   email: String
+   password: String
+   firstName: String
+   lastName: String
+   userType: String
+   title: String
+
+   # customer
+   phone: String
+   address: String
+   postcode: String
+   businessName: String
+   # customer non-required
+   position: String
+   businessContactAddress: String
+   businessContactPostcode: String
+   registrationNumber: String
+   businessWebsite: String
+   businessEmail: String
+   additionalInfo: String
+}
+
+type Query {
+   getUser: User @isAuth
+   authenticate(email: String!, password: String!): User
+}
+
+type Mutation {
+   createUser(data: UserInput): User
+}

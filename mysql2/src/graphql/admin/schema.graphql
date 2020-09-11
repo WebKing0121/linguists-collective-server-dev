@@ -1,0 +1,13 @@
+type Admin {
+  id: Int
+  user: User
+  otherName: String
+}
+
+input AdminWhere {
+  id: Int
+}
+
+type Query {
+   getAdmin(where: AdminWhere, limit: Int, offset: Int): Admin
+}
