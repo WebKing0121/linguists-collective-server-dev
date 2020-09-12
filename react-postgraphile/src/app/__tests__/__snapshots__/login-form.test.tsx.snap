@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`click login 1`] = `
+Array [
+  Object {
+    "email": "foo@bar.com",
+    "password": "password",
+  },
+]
+`;
+
+exports[`click register 1`] = `
+Object {
+  "email": "foo@bar.com",
+  "firstName": "First",
+  "lastName": "Last",
+  "password": "password",
+}
+`;
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    class="flex justify-center"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg bg-white"
+    >
+      <div
+        class="p-6"
+      >
+        <div
+          class="font-bold text-xl mb-2"
+        >
+          Login
+        </div>
+        <div
+          class="text-gray-700 text-base"
+        >
+          <div
+            class="float-right"
+          >
+            <a
+              class="cursor-pointer font-bold inline-block align-baseline text-sm text-blue-700 hover:text-blue-900"
+              color="gray"
+              data-testid="toggle-link"
+            >
+              Register
+            </a>
+          </div>
+          <form
+            class="bg-white pt-6 pb-4"
+            data-testid="login-form"
+          >
+            <div
+              class="mb-6"
+            >
+              <div
+                class="mb-4"
+              >
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input
+                  class="appearance-none border leading-tight py-2 px-3 rounded shadow text-gray-700 w-full focus:outline-none focus:shadow-outline"
+                  data-testid="login-email"
+                  id="email"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4"
+              >
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="password"
+                >
+                  Password
+                </label>
+                <input
+                  class="appearance-none border leading-tight py-2 px-3 rounded shadow text-gray-700 w-full focus:outline-none focus:shadow-outline"
+                  data-testid="login-password"
+                  id="password"
+                  type="password"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-between"
+            >
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                data-testid="login-submit-button"
+                type="submit"
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders registration view 1`] = `
+<DocumentFragment>
+  <div
+    class="flex justify-center"
+  >
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg bg-white"
+    >
+      <div
+        class="p-6"
+      >
+        <div
+          class="font-bold text-xl mb-2"
+        >
+          Register
+        </div>
+        <div
+          class="text-gray-700 text-base"
+        >
+          <div
+            class="float-right"
+          >
+            <a
+              class="cursor-pointer font-bold inline-block align-baseline text-sm text-blue-700 hover:text-blue-900"
+              color="gray"
+              data-testid="toggle-link"
+            >
+              Login
+            </a>
+          </div>
+          <form
+            class="bg-white pt-6 pb-4"
+            data-testid="login-form"
+          >
+            <div
+              class="mb-6"
+            >
+              <div
+                class="mb-4"
+              >
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input
+                  class="appearance-none border leading-tight py-2 px-3 rounded shadow text-gray-700 w-full focus:outline-none focus:shadow-outline"
+                  data-testid="login-email"
+                  id="email"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4"
+              >
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="password"
+                >
+                  Password
+                </label>
+                <input
+                  class="appearance-none border leading-tight py-2 px-3 rounded shadow text-gray-700 w-full focus:outline-none focus:shadow-outline"
+                  data-testid="login-password"
+                  id="password"
+                  type="password"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4"
+              >
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="firstName"
+                >
+                  First Name
+                </label>
+                <input
+                  class="appearance-none border leading-tight py-2 px-3 rounded shadow text-gray-700 w-full focus:outline-none focus:shadow-outline"
+                  data-testid="login-first-name"
+                  id="firstName"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4"
+              >
+                <label
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  for="lastName"
+                >
+                  Last Name
+                </label>
+                <input
+                  class="appearance-none border leading-tight py-2 px-3 rounded shadow text-gray-700 w-full focus:outline-none focus:shadow-outline"
+                  data-testid="login-last-name"
+                  id="lastName"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-between"
+            >
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                data-testid="login-submit-button"
+                type="submit"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
