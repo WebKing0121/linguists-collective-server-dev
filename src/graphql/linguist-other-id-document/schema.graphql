@@ -1,0 +1,12 @@
+type LinguistOtherIdDocument {
+  linguist: Linguist
+  name: String
+}
+
+input LinguistOtherIdDocumentWhere {
+  id: Int
+}
+
+type Query {
+   getLinguistOtherIdDocument(where: LinguistOtherIdDocumentWhere, limit: Int, offset: Int): LinguistOtherIdDocument
+}

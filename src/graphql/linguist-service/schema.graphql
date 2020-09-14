@@ -1,0 +1,12 @@
+type LinguistService {
+  linguist: Linguist
+  name: String
+}
+
+input LinguistServiceWhere {
+  id: Int
+}
+
+type Query {
+   getLinguistService(where: LinguistServiceWhere, limit: Int, offset: Int): LinguistService
+}

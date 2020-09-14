@@ -1,0 +1,13 @@
+type LinguistElligibleCountry {
+  id: Int
+  linguist: Linguist
+  name: String
+}
+
+input LinguistElligibleCountryWhere {
+  id: Int
+}
+
+type Query {
+   getLinguistElligibleCountry(where: LinguistElligibleCountryWhere, limit: Int, offset: Int): LinguistElligibleCountry
+}

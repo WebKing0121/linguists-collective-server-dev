@@ -1,0 +1,199 @@
+type Linguist {
+  id: Int
+  user: User
+
+  registrationStatus: String
+
+  ## Personal Details
+  dateOfBirth: DateTime
+  gender: String
+  businessEmail: String
+  businessPhone: String
+  onlineCallingDetails: String
+  addressHouseNumberName: String
+  addressStreet: String
+  addressTown: String
+  addressCity: String
+  addressCounty: String
+  addressPostcodeOrZipcode: String
+  addressCountry: String
+
+  firstReferenceName: String
+  firstReferenceEmail: String
+  firstReferenceAddress: String
+  firstReferencePhone: String
+
+  secondReferenceName: String
+  secondReferenceEmail: String
+  secondReferenceAddress: String
+  secondReferencePhone: String
+
+  ## ID & Tax
+  birthNationality: String
+  currentNationality: String
+  currentResidenceCountry: String
+  rightToWorkUK: String
+  elligibleCountries: [LinguistElligibleCountry]
+  idDocumentName: String
+
+  nationalInsuranceNumber: String
+  personalTaxReference: String
+  vatNumber: String
+  professionalLiabilityInsurance: String
+  professionalLiabilityExpirationDate: String
+  professionalLiabilityDocumentName: String
+  otherIdDocuments: [LinguistOtherIdDocument]
+  
+  ## Bank Details
+  preferredCurrency: String
+  bankHolderFullName: String
+  bankSortCode: String
+  bankAccountNumber:Int
+  bankBranchName: String
+  bankIBAN: String
+  bankSwiftCode: String
+  bankName: String
+  bankAddress: String
+  bankPostalZipcode: String
+  paypalEmail: String
+
+  ## Services
+  interpretingServices: [String]
+
+  ## Languages
+  motherTongue: String
+  primaryTargetLanguage: String
+  primarySourceLanguage: String
+
+  ## Education
+  ## educationalInstitutions: [LinguistEducationalInstitution]
+
+  ## Work
+  workExperienceRoles: [LinguistWorkExperienceRole]
+
+  ## Security
+  criminalRecord: String
+  securityPoliceClearance: String
+  securityClearanceLevel: String
+  ## -> securityClearanceDocument: 
+  securityCertificateExpiryDate: DateTime
+  
+  criminalRecordDetails: String
+  securityClearanceOther: String
+
+  ## Equality
+  submittingEqualityForm: Boolean
+
+  additionalInfo: String
+  ## -> resumeDocument: file
+  ## -> otherDocuments: file[]
+  disabilityOrNeeds: String
+  disabilityOrNeedsInfo: String
+  shareDisabilityInfoWith: String
+}
+
+input LinguistInput {
+  linguistId: Int
+  userId: Int
+
+  registrationStatus: String
+
+  ## Personal Details
+  dateOfBirth: DateTime
+  gender: String
+  businessEmail: String
+  businessPhone: String
+  onlineCallingDetails: String
+  addressHouseNumberName: String
+  addressStreet: String
+  addressTown: String
+  addressCity: String
+  addressCounty: String
+  addressPostcodeOrZipcode: String
+  addressCountry: String
+
+  firstReferenceName: String
+  firstReferenceEmail: String
+  firstReferenceAddress: String
+  firstReferencePhone: String
+
+  secondReferenceName: String
+  secondReferenceEmail: String
+  secondReferenceAddress: String
+  secondReferencePhone: String
+
+  ## ID & Tax
+  birthNationality: String
+  currentNationality: String
+  currentResidenceCountry: String
+  rightToWorkUK: String
+  elligibleCountries: [String]
+  idDocumentName: String
+
+  nationalInsuranceNumber: String
+  personalTaxReference: String
+  vatNumber: String
+  professionalLiabilityInsurance: String
+  professionalLiabilityExpirationDate: String
+  professionalLiabilityDocumentName: String
+  ## -> otherDocuments: []
+  
+  ## Bank Details
+  preferredCurrency: String
+  bankHolderFullName: String
+  bankSortCode: String
+  bankAccountNumber:Int
+  bankBranchName: String
+  bankIBAN: String
+  bankSwiftCode: String
+  bankName: String
+  bankAddress: String
+  bankPostalZipcode: String
+  paypalEmail: String
+
+  ## Services
+  interpretingServices: [String]
+
+  ## Languages
+  motherTongue: String
+  primaryTargetLanguage: String
+  primarySourceLanguage: String
+
+  ## Education
+  ## educationalInstitutions: [LinguistEducationalInstitutionInput]
+
+  ## Work
+  workExperienceRoles: [LinguistWorkExperienceRoleInput]
+
+  ## Security
+  criminalRecord: String
+  securityPoliceClearance: String
+  securityClearanceLevel: String
+  ## -> securityClearanceDocument: 
+  securityCertificateExpiryDate: DateTime
+  
+  criminalRecordDetails: String
+  securityClearanceOther: String
+
+  ## Equality
+  submittingEqualityForm: Boolean
+
+  additionalInfo: String
+  ## -> resumeDocument: file
+  ## -> otherDocuments: file[]
+  disabilityOrNeeds: String
+  disabilityOrNeedsInfo: String
+  shareDisabilityInfoWith: String
+}
+
+input LinguistWhere {
+  id: Int
+}
+
+type Query {
+   getLinguist(where: LinguistWhere, limit: Int, offset: Int): Linguist
+}
+
+type Mutation {
+   saveLinguistRegistrationForm(data: LinguistInput): Boolean
+}

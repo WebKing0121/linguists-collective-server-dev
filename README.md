@@ -1,29 +1,19 @@
-# README #
+## Node Graphql Apollo Template for Typescript
 
-This README would normally document whatever steps are necessary to get your application up and running.
+My goal for this template is not to explain the basics of graphql, but to show someone how to quickly build a Graphql API that does not have the n + 1 issue. This template IS MEANT to be used for 
+production as it contains easy ways to manage environment variables, and has an organized structure so code will not get out of hand. 
+To manage the n + 1 issue, we use data loading, the thing facebook released to solve this issue.
 
-### What is this repository for? ###
+Here is a link that goes over the code in this package in more detail. 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+https://medium.com/@brianalois/best-graphql-node-api-template-for-sql-jwt-2018-5e956b715143
 
-### How do I get set up? ###
+#### Authentication : JWT
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+#### ORM: Sequelize
 
-### Contribution guidelines ###
+#### Database: Mysql, or Postgres
 
-* Writing tests
-* Code review
-* Other guidelines
+Other Important packages used: express, apollo-server, graphql-sequelize, dataloader-sequelize
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Note: This uses typescript for the app. It is so similar to javascript, you could never have used typescript and add to this template. However, I will be writing this to use plain javascript. Comment if you would like that.

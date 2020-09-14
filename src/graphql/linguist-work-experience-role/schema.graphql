@@ -1,0 +1,28 @@
+type LinguistWorkExperienceRole {
+  linguist: Linguist
+  organisationName: String,
+  addressOrContact: String,
+  startDate: DateTime,
+  leavingDate: DateTime,
+  dutiesExperienceGained: String,
+  referenceName: String,
+  referenceContact: String,
+}
+
+input LinguistWorkExperienceRoleInput {
+  organisationName: String,
+  addressOrContact: String,
+  startDate: DateTime,
+  leavingDate: DateTime,
+  dutiesExperienceGained: String,
+  referenceName: String,
+  referenceContact: String,
+}
+
+input LinguistWorkExperienceRoleWhere {
+  id: Int
+}
+
+type Query {
+   getLinguistWorkExperienceRole(where: LinguistWorkExperienceRoleWhere, limit: Int, offset: Int): LinguistWorkExperienceRole
+}
