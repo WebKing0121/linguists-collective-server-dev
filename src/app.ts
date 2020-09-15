@@ -3,10 +3,12 @@ import * as jwt from 'express-jwt';
 import { ApolloServer } from 'apollo-server-express';
 import { sequelize } from './models';
 import { ENV } from './config';
+const bodyParser = require('body-parser');
 
 import { resolver as resolvers, schema, schemaDirectives } from './graphql';
 import { createContext, EXPECTED_OPTIONS_KEY } from 'dataloader-sequelize';
 import to from 'await-to-js';
+import { raw } from 'body-parser';
 // The Express middleware for file upload
 
 const app = express();
@@ -25,10 +27,16 @@ app.use(function (err, req, res, next) {
         return res.status(400).json(errorObject);
     }
 });
+// app.use('/graphql', bodyParser.json());
 
 const upload = () => {
     console.log('upload');
 };
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
 const server = new ApolloServer({
     typeDefs: schema,
@@ -41,13 +49,11 @@ const server = new ApolloServer({
         let user = nreq.user;
         return {
             [EXPECTED_OPTIONS_KEY]: createContext(sequelize),
-            user: user,
-            upload: upload,
-            server: this
+            user: user
         };
     }
 });
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, bodyParserConfig: true });
 
 app.listen({ port: ENV.PORT }, async () => {
     console.log(`🚀 Server ready at http://localhost:${ENV.PORT}${server.graphqlPath}`);
