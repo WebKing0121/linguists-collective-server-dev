@@ -6,11 +6,12 @@ type QuoteRequest {
   expertiseLevel: String
   sourceLanguage: String
   targetLanguage: String
-  turnaroundTime: String
+  turnaroundTime: DateTime
   #non-required
   otherPurpose: String
   budgetDetails: String
   preferredGender: String
+  quoteRequestFiles: [QuoteRequestFile]
 }
 
 input QuoteRequestInput {
@@ -20,11 +21,12 @@ input QuoteRequestInput {
   expertiseLevel: String
   sourceLanguage: String
   targetLanguage: String
-  turnaroundTime: String
+  turnaroundTime: DateTime
   #non-required
   otherPurpose: String
   budgetDetails: String
   preferredGender: String
+  initialFiles: [Upload]
 }
 
 input QuoteRequestWhere {

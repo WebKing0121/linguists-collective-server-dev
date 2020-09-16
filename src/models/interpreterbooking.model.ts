@@ -1,5 +1,6 @@
 import { Table, Column, Model, HasMany, BeforeSave, ForeignKey, BelongsTo, AllowNull } from 'sequelize-typescript';
 import { ENV } from '../config';
+import { InterpreterBookingFile } from './interpreterbookingfile.model';
 import { User } from './user.model';
 
 @Table({timestamps: false})
@@ -83,4 +84,6 @@ export class InterpreterBooking extends Model<InterpreterBooking> {
   @Column
   additionalInformation: String;
   
+  @HasMany(() => InterpreterBookingFile)
+  interpreterBookingFiles: [InterpreterBookingFile];
 }

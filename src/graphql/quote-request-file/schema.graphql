@@ -1,0 +1,23 @@
+type QuoteRequestFile {
+  id: Int
+  quoteRequest: QuoteRequest
+  fileName: String
+}
+
+input QuoteRequestFileInput {
+  quoteRequestId: Int
+  fileName: String
+}
+
+input QuoteRequestFileWhere {
+  id: Int
+}
+
+input QuoteRequestFilesWhere {
+  quoteRequestId: Int
+}
+
+type Query {
+  getQuoteRequestFile(where: QuoteRequestFileWhere, limit: Int, offset: Int): QuoteRequestFile
+  getQuoteRequestFiles(where: QuoteRequestFilesWhere, limit: Int, offset: Int): [QuoteRequestFile]
+}

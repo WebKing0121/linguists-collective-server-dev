@@ -1,5 +1,6 @@
 import { Table, Column, Model, HasMany, BeforeSave, ForeignKey, BelongsTo, AllowNull } from 'sequelize-typescript';
 import { ENV } from '../config';
+import { QuoteRequestFile } from './quoterequestfile.model';
 import { User } from './user.model';
 
 @Table({timestamps: false})
@@ -23,6 +24,9 @@ export class QuoteRequest extends Model<QuoteRequest> {
   @Column
   requestDetails: string;
 
+  @HasMany(() => QuoteRequestFile)
+  quoteRequestFiles: [QuoteRequestFile];
+
   @AllowNull(false)
   @Column
   expertiseLevel: string;
@@ -37,7 +41,7 @@ export class QuoteRequest extends Model<QuoteRequest> {
 
   @AllowNull(false)
   @Column
-  turnaroundTime: string;
+  turnaroundTime: Date;
   
   @Column
   otherPurpose: string;

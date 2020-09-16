@@ -1,0 +1,23 @@
+type InterpreterBookingFile {
+  id: Int
+  interpreterBooking: InterpreterBooking
+  fileName: String
+}
+
+input InterpreterBookingFileInput {
+  interpreterBookingId: Int
+  fileName: String
+}
+
+input InterpreterBookingFileWhere {
+  id: Int
+}
+
+input InterpreterBookingFilesWhere {
+  interpreterBookingId: Int
+}
+
+type Query {
+  getInterpreterBookingFile(where: InterpreterBookingFileWhere, limit: Int, offset: Int): InterpreterBookingFile
+  getInterpreterBookingFiles(where: InterpreterBookingFilesWhere, limit: Int, offset: Int): [InterpreterBookingFile]
+}
