@@ -1,6 +1,7 @@
-import * as express  from 'express';
+import * as express from 'express';
 import * as jwt from 'express-jwt';
 import { ApolloServer } from 'apollo-server-express';
+import { graphqlUploadExpress } from 'graphql-upload';
 import { sequelize } from './models';
 import { ENV } from './config';
 const bodyParser = require('body-parser');
@@ -8,10 +9,20 @@ const bodyParser = require('body-parser');
 import { resolver as resolvers, schema, schemaDirectives } from './graphql';
 import { createContext, EXPECTED_OPTIONS_KEY } from 'dataloader-sequelize';
 import to from 'await-to-js';
-import { raw } from 'body-parser';
-// The Express middleware for file upload
 
 const app = express();
+
+/* File Upload Express middleware */
+app.use(
+    graphqlUploadExpress({
+        // Limits here should be stricter than config for surrounding
+        // infrastructure such as Nginx so errors can be handled elegantly by
+        // `graphql-upload`:
+        // https://github.com/jaydenseric/graphql-upload#type-processrequestoptions
+        maxFileSize: 10000000, // 10 MB
+        maxFiles: 20,
+    }),
+);
 
 const authMiddleware = jwt({
     secret: ENV.JWT_ENCRYPTION,
