@@ -18,7 +18,7 @@ type TranslationAssignment {
   postCertificate: String
   additionalQARequired: String
   translationAssignmentFiles: [TranslationAssignmentFile]
-  #non-reuired
+  #non-required
   additionalNote: String
 }
 
@@ -34,7 +34,6 @@ input TranslationAssignmentInput {
   postCertificate: String
   additionalQARequired: String
   initialFiles: [Upload]
-  initialFilesNames: [String]
   #non-required
   additionalNote: String
 }
