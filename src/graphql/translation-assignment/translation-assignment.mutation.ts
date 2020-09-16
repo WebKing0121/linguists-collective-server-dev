@@ -82,10 +82,10 @@ export const Mutation = {
             throw err;
           }
 
-          return true;
-        },
-        after: () => {
-          return true;
-        }
-    }),
+      return true;
+    },
+    after: () => {
+      return true;
+    }
+  }),
 };
