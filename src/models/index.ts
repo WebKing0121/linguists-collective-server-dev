@@ -30,5 +30,7 @@ export { Admin } from './admin.model';
 export { TranslationAssignment } from './translationassignment.model';
 export { TranslationAssignmentFile } from './translationassignmentfile.model';
 export { QuoteRequest } from './quoterequest.model';
+export { QuoteRequestFile } from './quoterequestfile.model';
 export { InterpreterBooking } from './interpreterbooking.model';
+export { InterpreterBookingFile } from './interpreterbookingfile.model';
 

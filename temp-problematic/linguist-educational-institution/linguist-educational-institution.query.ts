@@ -1,6 +1,6 @@
 import { resolver } from 'graphql-sequelize';
-import { LinguistEducationalInstitution } from '../../models';
+// import { LinguistEducationalInstitution } from '../../models';
 
 export const Query = {
-    getLinguistEducationalInstitution: resolver(LinguistEducationalInstitution),
+    // getLinguistEducationalInstitution: resolver(LinguistEducationalInstitution),
 };

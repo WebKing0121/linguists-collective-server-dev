@@ -23,6 +23,7 @@ type InterpreterBooking {
   preferredGender: String,
   carParkingAvailable: String,
   additionalInformation: String,
+  interpreterBookingFiles: [InterpreterBookingFile]
 }
 
 input InterpreterBookingInput {
@@ -47,6 +48,7 @@ input InterpreterBookingInput {
   preferredGender: String,
   carParkingAvailable: String,
   additionalInformation: String,
+  scriptsOrInstructions: [Upload]
 }
 
 input InterpreterBookingWhere {
