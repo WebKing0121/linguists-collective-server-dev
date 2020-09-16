@@ -1,5 +1,6 @@
 import { Table, Column, Model, HasMany, BeforeSave, ForeignKey, BelongsTo, AllowNull } from 'sequelize-typescript';
 import { ENV } from '../config';
+import { LinguistEducationalInstitution } from './linguisteducationalinstitution.model';
 // import { LinguistEducationalInstitution } from './linguisteducationalinstitution.model';
 // import { LinguistEducationalInstitution } from './linguisteducationalinstitution.model';
 import { LinguistElligibleCountry } from './linguistelligiblecountry.model';
@@ -181,8 +182,8 @@ export class Linguist extends Model<Linguist> {
 
   /// Education
   ///
-  // @HasMany(() => LinguistEducationalInstitution)
-  // educationalInstitutions: LinguistEducationalInstitution[];
+  @HasMany(() => LinguistEducationalInstitution)
+  educationalInstitutions: LinguistEducationalInstitution[];
 
   /// Work Experience
   ///
