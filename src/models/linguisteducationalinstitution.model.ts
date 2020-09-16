@@ -1,6 +1,6 @@
 import { Table, Column, Model, HasMany, BeforeSave, ForeignKey, BelongsTo, AllowNull } from 'sequelize-typescript';
 import { ENV } from '../config';
-import { Linguist } from './';
+import { Linguist } from './linguist.model';
 import { LinguistEducationalInstitutionSubject } from './linguisteducationalinstitutionsubject.model';
 
 @Table({ timestamps: false })
